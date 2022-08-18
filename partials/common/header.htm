@@ -3,13 +3,18 @@
     x-bind="header"
 >
     <div class="flex items-center justify-between py-4 2xl:py-0 ">
-        <div class="flex-shrink-0 flex-grow-0 max-h-12 mr-8">
-            <img 
-                src="https://preview.colorlib.com/theme/calvino/assets/img/logo/xlogo2_footer.png.pagespeed.ic.alcdWjq3I2.webp" 
-                alt="Лого"
-                class="max-w-full h-auto"
-            >
+        {% if this.theme.header_logo %}
+        <div class="relative">
+            <picture>
+                <img src="{{ this.theme.header_logo | media }}" class="w-full max-h-8" alt="">
+            </picture>
+            <a href="/" class="absolute inset-0 z-10"></a>
         </div>
+        {% else %}
+        <a href="/" class="flex-shrink-0 flex-grow-0 mr-8 font-nunito font-extrabold text-2xl text-clr-heading tracking-tighter">
+            Cellar
+        </a>
+        {% endif %}
         {% partial 'components/menu' %}
     </div>
 </header>

@@ -146,7 +146,7 @@ module.exports = {
               display: "inline-block",
               fontFamily: theme('fontFamily.jost'),
               fontSize: rem(16),
-              fontWeight: theme('fontWeight.midle'),
+              fontWeight: theme('fontWeight.medium'),
               color: theme('colors.clr-link'),
               textDecoration: "none",
               cursor: "pointer",
@@ -154,7 +154,7 @@ module.exports = {
               '&:before': {
                 content: '""',
                 position: "absolute",
-                background: theme('colors.clr-cta'),
+                backgroundColor: theme('colors.clr-cta'),
                 width: "100%",
                 height: rem(2),
                 bottom: rem(-12),
@@ -259,6 +259,28 @@ module.exports = {
             backgroundPosition: 'center center',
             zIndex: '-10'
           }
+        },
+        '.link': {
+          position: "relative",
+          display: "inline-block",
+          fontFamily: theme('fontFamily.jost'),
+          fontSize: rem(16),
+          fontWeight: theme('fontWeight.medium'),
+          color: theme('colors.clr-link'),
+          textDecoration: "none",
+          cursor: "pointer",
+          transition: "all .3s ease-out 0s",
+          '&:before': {
+            content: '""',
+            position: "absolute",
+            backgroundColor: theme('colors.clr-cta'),
+            width: "100%",
+            height: rem(2),
+            bottom: rem(-12),
+          },
+          '&:hover': { 
+            letterSpacing: rem(1) 
+          },
         },
       })
     }),

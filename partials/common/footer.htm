@@ -1,11 +1,20 @@
 <footer class="bg-footer-texture pt-24">
     <div class="container grid grid-cols-12">
         <div class="col-span-8 md:col-span-6 lg:col-span-4 px-4">
-            <div class="max-h-12 w-full h-auto mb-9">
-                <img src="https://preview.colorlib.com/theme/calvino/assets/img/logo/xlogo2_footer.png.pagespeed.ic.alcdWjq3I2.webp" alt="">
+            {% if this.theme.footer_logo %}
+            <div class="relative">
+                <picture>
+                    <img src="{{ this.theme.footer_logo | media }}" class="w-full max-h-12 mb-9" alt="">
+                </picture>
+                <a href="/" class="absolute inset-0 z-10"></a>
             </div>
-            <div class="font-jost font-medium text-base text-bs-black-light leading-relaxed mb-5">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat, facilis. Rem dolor illo cum animi provident, neque deleniti unde est explicabo quisquam dolorum cumque omnis quibusdam praesentium autem quo libero.
+            {% else %}
+            <a href="/" class="font-nunito text-clr-heading text-3xl tracking-widest font-bold uppercase mb-8 px-8">
+                Cellar
+            </a>
+            {% endif %}
+            <div class="prose max-w-none mb-5">
+                {{ this.theme.footer_text | raw }}
             </div>
         </div>
         {% component 'footerMenu' %}
