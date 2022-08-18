@@ -211,7 +211,7 @@ module.exports = {
     container: false
   },
   plugins: [
-    plugin(function ({ addVariant, addComponents }) {
+    plugin(function ({ addVariant, addComponents, theme }) {
       addVariant('header--sticky', '&.header--sticky');
       addVariant('open', '&.open');
       addVariant('carousel-inited', '&.carousel--inited');
@@ -231,7 +231,35 @@ module.exports = {
           '@screen xl': {
             '--padding-x': 'calc(50vw - calc(50vw - 12.5%))',
           },
-        }
+        },
+        '.shape-one': {
+          '&:after': {
+            content: '""',
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '50%',
+            backgroundImage: theme('backgroundImage.shape-one'),
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            zIndex: '-10'
+          }
+        },
+        '.shape-two': {
+          '&:before': {
+            content: '""',
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '50%',
+            right: '0',
+            backgroundImage: theme('backgroundImage.shape-two'),
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            zIndex: '-10'
+          }
+        },
       })
     }),
     require('@tailwindcss/forms'),
