@@ -30,10 +30,12 @@
                         </div>
                         <a 
                             class="before:absolute before:inset-0 before:cursor-pointer mt-auto mb-0"
-                            href="{{ item.link }}" 
+                            href="{{ item.link ? item.link : '#' }}" 
                             x-bind="btnOpen"
                         >
-                            <span class="relative font-jost font-medium text-base-text-bs-black before:absolute before:bg-bs-pink before:w-full before:h-0.5 before:-bottom-3 transition-all duration-200 ease-in-out group-hover:text-white">Подробнее</span>
+                            <span class="link">
+                                Подробнее
+                            </span>
                         </a>
                     </div>
                     {% partial "components/modal" 

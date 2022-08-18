@@ -46,6 +46,11 @@ our_products:
             label: Изображение
             type: mediafinder
             required: true
+          link: 
+            label: Ссылка
+            type: text
+            required: true
+            default: '#'
           caption:
             label: Краткое описание
             type: richeditor
