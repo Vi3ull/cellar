@@ -9,7 +9,17 @@
       </div>
       <div class="flex flex-wrap">
         <div class="flex flex-wrap flex-grow-1 lg:basis-2/3">
-          <form action="#" method="POST">
+          <form action="#" method="POST"
+            data-request="{{ contactForm }}::onFormSubmit"
+            data-request-flash="true"
+            data-request-success="
+              $.oc.flashMsg({'text': 'Ваша заявка успешно отправлена!.', 'class': 'success', 'interval': 3});
+              $(this).find('input[type=text], input[type=email], textarea').val('');"
+            data-request-error="
+              $.oc.flashMsg({'text': 'Произошла ошибка!.', 'class': 'error', 'interval': 3})"  
+          >     
+            {{ form_token() }}
+            {#<div id="{{ genericForm }}_forms_flash"></div>#}  
             <div class="flex flex-wrap">
               <div class="w-full md:w-1/2 mb-7 px-4">
                 <label for="first-name" class="sr-only block text-sm font-medium text-clr-text">
