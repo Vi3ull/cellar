@@ -1,0 +1,35 @@
+<section class="py-16">
+    <div class="container">
+        <div class="prose text-center mx-auto mb-14">
+            {{ data.title | raw }}
+        </div>
+        <div class="carousel-equipment carousel js-carousel scrollbar">
+            <ul class="carousel__wrapper js-carousel-wrapper">
+            {% for item in data.items %}
+                <li class="carousel__slide carousel__slide--aspect--square js-carousel-slide">
+                    <div class="relative flex flex-col w-full h-full">
+                        <img 
+                            src="{{ item.image | media }}" 
+                            alt=""
+                            class="absolute inset-0 w-full h-full object-cover -z-20"
+                        >
+                        <div class="p-4 mt-auto mb-0 z-10 before:absolute before:inset-0 before:bg-gradient-to-b before:from-bs-gray/10 before:to-bs-black before:-z-10">
+                            <a 
+                                href="{{ item.url }}"
+                                class="block font-jost font-light text-base text-white mb-4 before:absolute before:inset-0"
+                            >
+                                {{ item.title }}
+                            </a>
+                            <p 
+                                class="font-nunito font-bold text-xl text-white"
+                            >
+                                {{ item.subtitle }}
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

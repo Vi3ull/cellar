@@ -1,0 +1,31 @@
+<section class="py-16">
+    <div class="container grid grid-cols-12">
+        <div class="col-span-12 grid grid-cols-12 items-center pb-6 mb-5 border-b border-bs-gray-light">
+            <div class="col-span-12 md:col-span-8 xl:col-span-7 2xl:col-span-5 prose prose-headings:mt-0 mb-12 md:mb-0">
+                {{ data.title | raw }}
+            </div>
+            {% if data.has_btn %}
+            <div class="col-span-12 md:col-span-4 md:text-end">
+                <a href="{{ data.btn_url }}" class="link">
+                    {{ data.btn_text }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="flex flex-wrap items-center col-start-1 col-span-10 lg:col-span-4 mt-10">
+            {% for item in data.items %}
+                <div class="relative w-1/2 odd:before:absolute before:right-0 before:top-1 before:w-px before:h-full before:bg-bs-gray-light px-4 mb-8">
+                    <span class="font-nunito font-bold text-4xl text-clr-cta leading-none uppercase">
+                        {{ item.number }}
+                    </span>
+                    <p class="font-jost font-semibold text-sm text-clr-heading leading-snug">
+                        {{ item.caption }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-start-1 col-span-10 lg:col-start-6 lg:col-span-7 prose max-w-none prose-">
+            {{ data.description | raw }}
+        </div>
+    </div>
+</section>

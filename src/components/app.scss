@@ -1,0 +1,181 @@
+@import './!common/_';
+// @import './aos/_';
+
+@tailwind base;
+
+@layer base {
+  :root {
+    --padding-x: 1rem;
+    --clrHeader: 255 255 255;
+    --clrBody: 255 255 255;
+    --clrFooter: 255 255 255;
+    --clrHeading: 25 40 57;
+    --clrText: 94 94 94;
+    --clrLink: 25 40 57;
+    --clrCta: 45 155 39;
+    --clrControl: 222 226 230;
+    --clrSelection: 255 149 64;
+    --clrHover: 29 116 113;
+    --clrOverlay: 81 87 105;
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='number'],
+  input[type='url'],
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='week'],
+  input[type='time'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='checkbox'],
+  input[type='radio'],
+  select,
+  select[multiple],
+  textarea {
+    @apply w-full border border-clr-control font-normal text-sm text-clr-text leading-normal focus:border-clr-cta;
+  }
+}
+
+@tailwind components;
+
+@layer components {
+  @import './carousel/_';
+
+  @import './scrollbar/_';
+
+  .carousel {
+    &-hero {
+      --carouselSlidesCount:auto;
+      --carouselSlidesGap:60px;
+    }
+
+    &-why-us {
+      --carouselSlidesCount:auto;
+      --carouselSlidesGap:32px;
+    }
+
+    &-testimonials {
+      --carouselSlidesCount:3;
+      --carouselSlidesGap:46px;
+    }
+
+    &-stack {
+      --carouselSlidesCount:10;
+      --carouselSlidesGap:40px;
+    }
+  }
+
+  // .title {
+  //   display: inline-block;
+  //   font-family: "Nunito",sans-serif;
+  //   font-weight: 700;
+  //   font-size: 36px;
+  //   color: var(--bs-black);
+  //   letter-spacing: 1.25;
+  //   margin-bottom: 12px;
+  // }
+
+  // .subtitle {
+  //   display: inline-block;
+  //   font-family: "Jost",sans-serif;
+  //   font-size: 12px;
+  //   font-weight: 400;
+  //   color: #ff4495;
+  //   text-transform: uppercase;
+  //   letter-spacing: .1em;
+  //   margin-bottom: 18px;
+  // }
+
+  // .caption {
+  //   @apply inline-block font-jost font-normal text-clr-cta text-sm bg-white rounded-3xl border border-clr-cta/50 normal-case py-1 px-5 mb-5 mr-2;
+  // }
+
+  // .link {
+  //   position: relative;
+  //   display: inline-block;
+  //   font-family: "Jost",sans-serif;
+  //   font-size: 16px;
+  //   font-weight: 500;
+  //   color: var(--bs-black);
+  //   text-decoration: none;
+  //   cursor: pointer;
+  //   transition: all .3s ease-out 0s;
+  // }
+
+  // .link::before {
+  //   content: "";
+  //   position: absolute;
+  //   background: var(--bs-pink);
+  //   width: 100%;
+  //   height: 2px;
+  //   bottom: -12px;
+  // }
+
+  // .link:hover {
+  //   letter-spacing: 1px;
+  // }
+
+  .shape-one {
+    // @apply after:absolute after:left-0 after:top-0 after:bottom-0 after:right-1/2 after:bg-shape-one after:bg-no-repeat after:bg-center after:-z-10
+  }
+
+  .shape-two {
+    // @apply before:absolute before:left-1/2 before:top-0 before:bottom-0 before:right-0 before:bg-shape-two before:bg-no-repeat before:bg-center before:-z-10
+  }
+
+  .carousel-brands {
+    --carouselSlidesCount:1;
+    --carouselSlidesGap:12px;
+
+
+    @media (min-width: 480px) {
+      --carouselSlidesCount:2;
+    }
+
+    @media (min-width: 768px) {
+      --carouselSlidesCount:3;
+    }
+
+    @media (min-width: 1024px) {
+      --carouselSlidesCount:4;
+    }
+
+    @media (min-width: 1280px) {
+      --carouselSlidesCount:5;
+    }
+  }
+  .carousel-equipment {
+    --carouselSlidesCount:1;
+    --carouselSlidesGap:12px;
+
+    @media (min-width: 480px) {
+      --carouselSlidesCount:2;
+    }
+
+    @media (min-width: 768px) {
+      --carouselSlidesCount:3;
+      --carouselSlidesGap:24px;
+    }
+
+    @media (min-width: 1024px) {
+      --carouselSlidesCount:4;
+    }
+  }
+  .carousel-testimonials {
+    --carouselSlidesCount:1;
+  }
+
+  @import './menu-toggle/_';
+
+  @import './dropdown/_';
+
+  // @import './editor/_';
+
+  @import './modal/_';
+}
+
+@tailwind utilities;

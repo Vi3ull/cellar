@@ -1,0 +1,93 @@
+<div class="py-12">
+  <div class="container flex flex-col">
+    <div class="py-6 mb-12">
+      {{ data.map }}
+    </div>
+    <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-md">
+      <div class="prose mb-14">
+        {{ data.title | raw }}
+      </div>
+      <div class="flex flex-wrap">
+        <div class="flex flex-wrap flex-grow-1 lg:basis-2/3">
+          <form action="#" method="POST">
+            <div class="flex flex-wrap">
+              <div class="w-full md:w-1/2 mb-7 px-4">
+                <label for="first-name" class="sr-only block text-sm font-medium text-clr-text">
+                  Имя
+                </label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name" 
+                  autocomplete="name"
+                  placeholder="Ваше имя"
+                  required
+                >
+              </div>
+              <div class="w-full md:w-1/2 mb-7 px-4">
+                <label for="email-address" class="sr-only block text-sm font-medium text-clr-text">
+                  Почта
+                </label>
+                <input 
+                  type="email" 
+                  name="email-address" 
+                  id="email-address" 
+                  autocomplete="email" 
+                  placeholder="info@example.com"
+                  required
+                >
+              </div>
+              <div class="w-full mb-7 px-4">
+                <label for="message" class="sr-only block text-sm font-medium text-clr-text">
+                  Сообщение
+                </label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  cols="30"
+                  rows="9" 
+                  placeholder="Введите сообщение..."
+                  required
+                >
+                </textarea>
+              </div>
+              <button 
+               type="submit" 
+                class="font-nunito font-normal text-sm text-clr-cta text-center tracking-widest uppercase bg-white border border-clr-cta cursor-pointer hover:text-clr-hover hover:border-clr-hover transition-all duration-300 ease-in py-4 px-11 mx-4 mt-4 mb-8"
+              >
+                Отправить
+              </button>
+              
+            </div>
+          </form>
+        </div>
+        <div class="flex-grow px-4">
+          <div class="flex">
+            <div>
+              {% partial 'common/icon' class="w-8 h-8 fill-transparent stroke-gray-500 mt-4" icon="home" %}
+            </div>
+            <div class="prose prose-p:font-nunito prose-p:font-medium prose-p:text-base prose-p:text-gray-500 prose-p:leading-snug prose-p:mb-4 prose-headings:mb-1 ml-4">
+              {{ data.address | raw }}
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+              {% partial 'common/icon' class="w-8 h-8 fill-transparent stroke-gray-500 mt-4" icon="mobile" %}
+            </div>
+            <div class="prose prose-p:font-nunito prose-p:font-medium prose-p:text-base prose-p:text-gray-500 prose-p:leading-snug prose-p:mb-4 prose-headings:mb-1 ml-4">
+              {{ data.phone | raw }}
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+              {% partial 'common/icon' class="w-8 h-8 fill-transparent stroke-gray-500 mt-4" icon="mail" %}
+            </div>
+            <div class="prose prose-p:font-nunito prose-p:font-medium prose-p:text-base prose-p:text-gray-500 prose-p:leading-snug prose-p:mb-4 prose-headings:mb-1 ml-4">
+              {{ data.email | raw }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

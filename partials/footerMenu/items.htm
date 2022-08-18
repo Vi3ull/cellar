@@ -1,0 +1,24 @@
+{% for item in items if not item.viewBag.isHidden %}
+<div class="col-span-4 px-4">
+    <div>
+        <div class="font-nunito font-semibold text-xl text-black-dark leading-tight mb-10">
+            {{ item.title }}
+        </div>
+        {% if item.items %} 
+        <ul class="flex flex-col">
+            {% for item in item.items %}
+            <li class="mb-4">
+                <a 
+                    href="{{ item.url }}"
+                    class="font-jost font-light text-base text-black-light no-underline underline-offset-4 hover:underline"
+                >
+                    {{ item.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+

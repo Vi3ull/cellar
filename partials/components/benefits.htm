@@ -1,0 +1,36 @@
+<section class="categories-area bottom-padding position-relative">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-xl-5 col-lg-8 col-md-10">
+              <div class="section-tittle text-center mb-60">
+                {{ data.title | raw }}
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        {% for item in data.items %}
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat mb-50">
+                    <h5>
+                        <a href="{{ item.link }}">
+                            {{ item.title | raw }}
+                        </a>
+                    </h5>
+                    <div class="cat-icon">
+                        <img src="{{ item.image | media }}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        {{ item.description | raw }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+      </div>
+  </div>
+  <div class="shape-s1 d-none d-xxl-block">
+      <img src="{{ 'assets/img/xshape-1.png.pagespeed.ic.AaMFvd8b1h.webp' | theme }}" alt=""/>
+  </div>
+  <div class="shape-s2 d-none d-xl-block">
+      <img src="{{ 'assets/img/xshape-2.png.pagespeed.ic.2YA7T3nall.webp' | theme }}" alt=""/>
+  </div>
+</section>

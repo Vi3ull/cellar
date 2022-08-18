@@ -1,0 +1,13 @@
+<div class="pt-20 pb-10 bg-gradient-to-r from-bs-gray to-bs-gray-light">
+  <div class="container flex flex-col mt-16">
+    <div class="font-nunito font-bold text-5xl text-bs-black leading-tight mb-3">
+      {{ this.page.title }}
+    </div>
+    <div class="font-jost font-medium text-xl text-bs-black leading-relaxed">
+      {{ this.page.description | raw }}
+    </div>
+  </div>
+  <div class="bg-white/80 w-full py-2 mt-10">
+    {% component 'breadcrumbs' %}
+  </div>
+</div>

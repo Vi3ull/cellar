@@ -1,0 +1,17 @@
+<div class="container py-16">
+    <div class="py-10 px-12 border border-bs-gray-light shadow-brands">
+        <div class="carousel-brands carousel js-carousel scrollbar">
+            <ul class="carousel__wrapper js-carousel-wrapper">
+                {% for item in data.items %}
+              <li class="carousel__slide carousel__slide--aspect--square js-carousel-slide">
+                <img 
+                    src="{{ item.image | media }}" 
+                    alt=""
+                    class="w-full h-full object-cover"
+                >
+              </li>
+              {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div 
+    class="flex items-center flex-grow flex-shrink-0 justify-end"
+    x-data="menu"
+>
+    <a  
+        href="/page-list"
+        x-bind="btnOpen"
+        class="2xl:hidden"
+    >
+        {% partial 'common/icon' class="w-8 h-8 fill-transparent stroke-gray-500" icon="menu" %}
+    </a>
+    <div 
+        class="flex flex-col 2xl:flex-row basis-full fixed top-0 left-full bottom-0 w-11/12 xs:w-3/5 sm:3/4 md:w-1/3 2xl:w-full bg-white 2xl:static open:-translate-x-full transition-transform ease-in duration-300 z-50 px-4"
+        x-bind="menuWrapper"
+    >
+        <div class="2xl:hidden text-end py-8">
+            <button 
+                type="button"
+                x-bind="btnClose"
+            >
+                {% partial 'common/icon' class="w-10 h-10 fill-transparent stroke-bs-pink stroke-2 rounded-full border-2 border-bs-pink ml-auto mr-0" icon="close" %}
+            </button>
+        </div>
+        <nav class="flex-grow">
+            {% component 'generalMenu' %}
+        </nav>
+        <div class="flex flex-shrink-0 items-center 2xl:order-last ml-auto mx-0 py-8 2xl:py-0">
+            <a 
+                href="#"
+                class="font-jost font-normal text-base text-bs-black capitalize cursor-pointer mr-6"
+            >
+                Связаться с нами:
+                <span class="border-b border-bs-black border-dotted pb-1">+7 (999) 999-99-99</span>
+            </a>
+            <a 
+                href="#"
+                class="hidden font-jost font-medium text-lg text-white capitalize cursor-pointer rounded-3xl py-3 px-9 transition-all duration-500 ease-out bg-gradient-to-b from-bs-pink via-bs-red to-bs-blue hover:from-bs-blue hover:to-bs-pink"
+            >
+                Перезвонить
+            </a>
+        </div>
+    </div>
+</div>

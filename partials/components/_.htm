@@ -1,0 +1,43 @@
+{% for block in components %}
+
+  {% if block._group == "editor" %}
+    {% partial "components/editor" data=block %}
+  {% endif %}
+
+  {% if block._group == "intro" %}
+    {% partial "components/intro" data=block %}
+  {% endif %}
+
+  {% if block._group == "our_products" %}
+    {% partial "components/our_products" data=block %}
+  {% endif %}
+
+  {% if block._group == "about_us" %}
+    {% partial "components/about_us" data=block %}
+  {% endif %}
+
+  {% if block._group == "why_us" %}
+    {% partial "components/why_us" data=block %}
+  {% endif %}
+
+  {% if block._group == "brands" %}
+    {% partial "components/brands" data=block %}
+  {% endif %}
+
+  {% if block._group == "equipment" %}
+    {% partial "components/equipment" data=block %}
+  {% endif %}
+
+  {% if block._group == "testimonials" %}
+    {% partial "components/testimonials" data=block %}
+  {% endif %}
+
+  {% if block._group == "offer" %}
+    {% partial "components/offer" data=block %}
+  {% endif %}
+
+  {% if block._group == "contact" %}
+    {% partial "components/contact" data=block %}
+  {% endif %}
+
+{% endfor %}

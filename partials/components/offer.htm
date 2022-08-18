@@ -1,0 +1,26 @@
+<div class="offer section-img-bg2" style="background-image: url('{{ data.image | media }}');">
+    <div class="container">
+        <div class="row">
+            <div class="offset-xl-6 offset-lg-5 col-xl-5 col-lg-7 col-md-9 col-sm-12">
+                <div class="single-offer">
+                    <div class="offer-cap">
+                        <div class="emargenc-cap">
+                            {{ data.title | raw }}
+                        </div>
+                        {{ data.description | raw }}
+                        {#
+                        <h5>Interested to<br> Digging Dipper?</h5>
+                        <p class="emargenc-cap">We’re out to create purposeful spaces that balance art and
+                            creativity with science and strategy.</p>
+                        #}
+                        {% if data.has_btn_%}
+                        <a href="{{ data.btn_url }}" class="border-btn loan-btn">
+                            {{ data.btn_text }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

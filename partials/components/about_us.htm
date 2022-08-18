@@ -1,0 +1,14 @@
+<section class="py-16">
+    <div class="container flex flex-wrap">
+        <div class="lg:basis-1/2 px-4">
+            <img 
+                src="{{ data.image | media }}" 
+                alt=""
+                class="max-w-full h-auto rounded-md"
+            >
+        </div>
+        <div class="lg:basis-1/2 prose max-w-full px-4 mt-8">
+            {{ data.description | raw }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="relative z-10 2xl:shape-one 2xl:shape-two py-10">
+    <div class="relative container flex flex-wrap items-center py-20 lg:py-44 z-20">
+        <div class="md:basis-1/2 prose max-w-full pb-16 px-4">
+            {{ data.caption | raw }}
+        </div>
+        <div class="relative md:basis-1/2 px-4 z-20">
+            <picture>
+                <img 
+                    src="{{ data.image | media }}" 
+                    alt=""
+                    class="max-w-full h-auto"
+                >
+            </picture>
+        </div>
+    </div>
+</section>

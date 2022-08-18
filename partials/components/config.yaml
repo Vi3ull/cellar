@@ -1,0 +1,300 @@
+editor:
+  name: Редактор
+  description: Редактор
+  icon: icon-pencil-square-o
+  fields:
+    content: 
+      type: richeditor
+
+intro:
+  name: Интро
+  description: Интро
+  icon: icon-film
+  fields:
+    caption:
+      label: Описание 
+      type: richeditor
+      span: left
+    image:
+      label: Изображение 
+      type: mediafinder
+      mode: image
+      span: right
+
+our_products:
+  name: Наша продукция
+  description: Наша продукция
+  icon: icon-building
+  fields:
+    title:
+      label: Заголовок 
+      type: richeditor
+      span: full
+      size: small
+    items:
+      type: repeater
+      style: collapsed
+      prompt: Добавить элемент
+      span: full
+      form:
+        fields:
+          title:
+            label: Заголовок
+            type: richeditor
+            size: small
+          image: 
+            label: Изображение
+            type: mediafinder
+            required: true
+          caption:
+            label: Краткое описание
+            type: richeditor
+            size: large
+          description:
+            label: Подробное описание
+            type: richeditor
+            size: large
+          
+about_us:
+  name: О нас
+  description: О нас
+  icon: icon-question-circle-o
+  fields:
+    image:
+      label: Описание
+      type: mediafinder
+      span: left
+    description:
+      label: Описание
+      type: richeditor
+      size: large
+      span: right
+    has_btn:
+      label: Добавить кнопку
+      type: switch
+      span: full
+    btn_link: 
+      label: Ссылка кнопки
+      type: text
+      span: left
+      default: "#"
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+    btn_text: 
+      label: Текст кнопки
+      type: text
+      span: right
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+
+why_us:
+  name: Почему мы
+  description: Почему мы
+  icon: icon-question-circle-o
+  fields:
+    title:
+      label: Заголовок
+      type: richeditor
+      size: large
+      span: full
+    has_btn:
+      label: Добавить кнопку
+      type: switch
+      span: full
+    btn_link: 
+      label: Ссылка кнопки
+      type: text
+      span: left
+      default: "#"
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+    btn_text: 
+      label: Текст кнопки
+      type: text
+      span: right
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+    description:
+      label: Описание
+      type: richeditor
+      size: large
+      span: full
+    items:
+      type: repeater
+      style: collapsed
+      prompt: Добавить элемент
+      span: full
+      form:
+        fields:
+          number:
+            label: Число
+            type: number
+            span: left
+          caption:
+            label: Подпись
+            type: text
+            span: right
+
+brands:
+  name: Бренды
+  description: Бренды
+  icon: icon-shopping-basket
+  fields:
+    items:
+      type: repeater
+      style: collapsed
+      prompt: Добавить элемент
+      span: full
+      form:
+        fields:
+          image:
+            label: Изображение
+            type: mediafinder
+            span: full
+    
+equipment:
+  name: Комплектация
+  description: Комплектация
+  icon: icon-money
+  fields:
+    title:
+      title:
+      label: Заголовок
+      type: richeditor
+      size: small
+      span: full
+    items:
+      type: repeater
+      style: collapsed
+      prompt: Добавить элемент
+      span: full
+      form:
+        fields:
+          image:
+            label: Изображение
+            type: mediafinder
+            span: full
+          title:
+            label: Заголовок
+            type: text
+            span: storm
+            cssClass: col-md-4
+          subtitle:
+            label: Подзаголовок
+            type: text
+            span: storm
+            cssClass: col-md-4
+          url:
+            label: Ссылка
+            type: text
+            span: storm
+            cssClass: col-md-4
+
+testimonials:
+  name: Отзывы
+  description: Отзывы
+  icon: icon-money
+  fields:
+    title:
+      title:
+      label: Заголовок
+      type: richeditor
+      size: small
+      span: full
+    items:
+      type: repeater
+      style: collapsed
+      prompt: Добавить элемент
+      span: full
+      form:
+        fields:
+          image:
+            label: Изображение
+            type: mediafinder
+            span: full
+          caption:
+            label: Текст
+            type: richeditor
+            size: large
+            span: full
+          name:
+            label: Имя
+            type: text
+            span: storm
+            cssClass: col-md-4
+
+offer:
+  name: Оффер
+  description: Оффер
+  icon: icon-handshake-o
+  fields:
+    title:
+      label: Заголовок
+      type: richeditor
+      size: small
+      span: full
+    description:
+      label: Описание
+      type: richeditor
+      size: large
+      span: full
+    has_btn:
+      label: Добавить кнопку
+      type: switch
+      span: full
+    btn_link: 
+      label: Ссылка кнопки
+      type: text
+      span: left
+      default: "#"
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+    btn_text: 
+      label: Текст кнопки
+      type: text
+      span: right
+      trigger:
+        action: show
+        field: has_btn
+        condition: checked
+
+contact:
+  name: Контакты
+  description: Контакты
+  icon: icon-handshake-o
+  fields:
+    title:
+      label: Заголовок
+      type: richeditor
+      size: small
+      span: full
+    map:
+      label: Карта
+      type: codeeditor
+      size: small
+      language: html
+    address:
+      label: Адрес
+      type: richeditor
+      size: small
+      span: full
+    phone:
+      label: Телефон
+      type: richeditor
+      size: small
+      span: full
+    email:
+      label: email
+      type: richeditor
+      size: small
+      span: full
