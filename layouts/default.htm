@@ -34,6 +34,20 @@ recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 ==
+<?php
+function onStart() {
+  $theme_colors = array();
+  $colors = $this->theme->colors;
+  if (isset($this->theme->colors)) {
+    foreach ($colors as $key => $color) {
+        list($r, $g, $b) = sscanf($color, "#%02x%02x%02x");
+        $theme_colors += [ $key => "$r $g $b"];
+    }
+    $this['theme_colors'] = $theme_colors;
+  }
+}
+?>
+==
 {variable 
   name="pageContent" 
   tab="Контент страницы"

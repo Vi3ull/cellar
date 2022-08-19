@@ -66,4 +66,4 @@ tabs:
         tab: Внешний вид
         type: nestedform
         showPanel: true
-        form: ~/themes/paseca/themeColors.yaml
+        form: ~/themes/cellar/themeColors.yaml

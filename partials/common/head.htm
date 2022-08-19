@@ -11,86 +11,15 @@
 
 <link rel="stylesheet" href="{{ ['~/modules/system/assets/css/framework.extras.css'] | theme }}">
 
-{#
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      screens: {
-        'xs': '480px',
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-      },
-      fontFamily: {
-        'nunito': "'Nunito', 'sans-serif'",
-        'jost': "'Jost', 'sans-serif'",
-      },
-      extend: {
-        colors: {
-          'padding-x': '1rem',
-          'bs-white': '#ffffff',
-          'bs-black': '#192839',
-          'bs-black-light': '#5e5e5e',
-          'bs-black-dark': '#1a1a1a',
-          'bs-gray': '#a6a7aa',
-          'bs-gray-light': '#dee2e6',
-          'bs-gray-dark': '#aaacb3',
-          'bs-pink': '#FF4495',
-          'bs-blue': '#7db9e8',
-          'bs-red': '#ff6d6d',
-          'overlay': 'rgba(81,87,105,.4);',
-        },
-        boxShadow: {
-          'header': '0 10px 15px rgb(25 25 25 / 10%)',
-          'card': '0 25px 35px rgb(68 162 255 / 10%)',
-          'image': '0 15px 25px rgb(0 4 74 / 4%)',
-          'brands': '0 15px 25px rgb(68 162 255 / 6%)',
-          'testimonials': '0 15px 25px rgb(68 162 255 / 6%)',
-        },
-        backgroundImage: {
-          'footer-texture': "url({{ 'assets/img/footer-texture.jpg' | theme }})",
-          'shape-one': "url({{ 'assets/img/shape-one.webp' | theme }})",
-          'shape-two': "url({{ 'assets/img/shape-two.webp' | theme }})",
-        },
-        spacing: {
-          '1/10': '10%',
-        }
-      },
-    },
-    corePlugins: {
-      container: false
-    },
-  }
-</script>
+<link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
-<style type="text/tailwindcss">
-  input[type='text'],
-  input[type='password'],
-  input[type='email'],
-  input[type='number'],
-  input[type='url'],
-  input[type='date'],
-  input[type='datetime-local'],
-  input[type='month'],
-  input[type='week'],
-  input[type='time'],
-  input[type='search'],
-  input[type='tel'],
-  input[type='checkbox'],
-  input[type='radio'],
-  select,
-  select[multiple],
-  textarea {
-    @apply w-full border border-bs-gray-light font-normal text-sm text-bs-black leading-normal;
+<style>
+  :root {
+    {% for key, color in theme_colors %} 
+      --{{ key }}: {{ color }};
+    {% endfor %}
   }
 </style>
-#}
-
-<link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
 {% styles %}
 {{ this.theme.include_head }}
